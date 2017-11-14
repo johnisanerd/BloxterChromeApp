@@ -13,5 +13,7 @@
   "permissions": [
     "activeTab",
     "storage"
-  ]
+  ],
+  "homepage_url": "http://mygopigo.com",
+  "offline_enabled": true
 }

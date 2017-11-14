@@ -31,19 +31,28 @@
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
     <script src="popup.js"></script>
+    <script src="dexter_core.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
 
   <body>
-    <h1>Background Color Changer</h1>
+    <h1>Bloxter Chrome Extension</h1>
+    <img style='' src="Dexter_Industries_Logo.jpg" width="100%">
     <div id="container">
-      <span>Choose a color</span>
-      <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-      </select>
+      <span>
+        <a href="http://bloxter.com" target="_blank">Open Bloxter</a>
+      </span>
+    </div>
+    <div id="container">
+      This is some more information.  We're going to get something from here!
+    </div>
+    <div id="container">
+      <span>
+        <img id="stop-i" src="stop.png" title="Press Stop sign to stop your robot." align="middle" onclick=stop_gopigo()>
+      </span>
+      <span>
+        <button onclick="stop_gopigo()" class="button button_red">Stop!</button>
+      </span>
     </div>
   </body>
 </html>
