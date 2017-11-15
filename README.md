@@ -5,7 +5,7 @@ Bloxter Chrome App
 1.  Check if you connected to Bloxter.com or a robot.
 2.  Check battery level.
 3.  Check the name of the robot.
-4.  Rename the robot.
+4.  NEVER USE COOKIES.  FORCE REFRESH.
 
 ## Advanced Goals
 1.  Change the name of the robot.
@@ -18,3 +18,9 @@ Bloxter Chrome App
 
 1. [Getting Started: Building a Chrome Extension](https://developers.chrome.com/extensions/getstarted)
 2. [Extension Overview](https://developers.chrome.com/extensions/overview)
+
+## Developer Installation
+1. In Chrome, go to chrome://extensions/
+2. Click "Developer Mode"
+3. Click "Load Unpacked Extension . . ."
+4. Select the package folder, and enable.
