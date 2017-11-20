@@ -12,7 +12,10 @@
   },
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "http://www.bloxter.com/",
+    "http://bloxter.com/",
+    "http://www.mygopigo.com/"
   ],
   "homepage_url": "http://mygopigo.com",
   "offline_enabled": true
