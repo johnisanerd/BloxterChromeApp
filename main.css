@@ -685,20 +685,20 @@ table.center {
 
 @font-face {
 font-family: 'Open Sans';
-src: url('./fonts/open_sans/OpenSans-Light.eot');
-src: url('./fonts/open_sans/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
-	 url('./fonts/open_sans/OpenSans-Light.ttf') format('truetype'),
-	 url('./fonts/open_sans/OpenSans-Light.svg#open_sanslight') format('svg');
+src: url('./OpenSans-Light.eot');
+src: url('./OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+	 url('./OpenSans-Light.ttf') format('truetype'),
+	 url('./OpenSans-Light.svg#open_sanslight') format('svg');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'Open Sans';
-src: url('./fonts/open_sans/OpenSans-Semibold.eot');
-src: url('./fonts/open_sans/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
-	 url('./fonts/open_sans/OpenSans-Semibold.ttf') format('truetype'),
-	 url('./fonts/open_sans/OpenSans-Semibold.svg#open_sanssemibold') format('svg');
+src: url('./OpenSans-Semibold.eot');
+src: url('./OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+	 url('./OpenSans-Semibold.ttf') format('truetype'),
+	 url('./OpenSans-Semibold.svg#open_sanssemibold') format('svg');
 font-weight: 600;
 font-style: normal;
 }

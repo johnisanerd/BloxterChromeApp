@@ -23,16 +23,17 @@
         justify-content: space-between;
       }
     </style>
-
+    <link rel="stylesheet" type="text/css" href="main.css">
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
+    <script type="text/javascript" src="./jquery-3.1.1.js"></script>
     <script src="popup.js"></script>
     <script src="dexter_core.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
+
   </head>
 
   <body>
@@ -48,10 +49,8 @@
     </div>
     <div id="container">
       <span>
-        <img id="stop-i" src="stop.png" title="Press Stop sign to stop your robot." align="middle" onclick=stop_gopigo()>
-      </span>
-      <span>
-        <button onclick="stop_gopigo()" class="button button_red">Stop!</button>
+        <!-- <img id="stop-i" src="stop.png" title="Press Stop sign to stop your robot." align="middle" onclick=stop_gopigo()> -->
+        <img id="stop-i" src="stop.png" title="Press Stop sign to stop your robot." align="middle">
       </span>
     </div>
   </body>

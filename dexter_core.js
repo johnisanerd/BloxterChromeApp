@@ -16,7 +16,7 @@ var blockly_needs_saving = false; // This is an actual Save Program, not autosav
 var home_dir = "/home/pi/Documents/";
 var usb_dir = "/media/usb/";
 var workspace = null;
-var $SCRIPT_ROOT = '';
+var $SCRIPT_ROOT = 'http://bloxter.com';
 
 'use strict';
 
@@ -30,13 +30,13 @@ function auto_detect() {
       console.log("auto_detect/connected_robot:"+detected_robot_answer.connected);
       console.log("Connected: "+connected_robot);
       if (typeof Blockly != 'undefined') {
-        Blockly.GoPiGoVersion = detected_robot;        
+        Blockly.GoPiGoVersion = detected_robot;
       };
-      
+
       if (detected_robot != "GoPiGo") {
         $("#trimming").css("display","none");
       }
-      
+
       if (connected_robot){
         check_batteries();
         select_support('sdcard');
@@ -54,7 +54,7 @@ function auto_detect() {
 function check_run_button() {
   // check status of running blockly program
   // if blockly program is done then return button to "Run Your Program"
-  // this function is called at a rapid interval whenever a Blockly program 
+  // this function is called at a rapid interval whenever a Blockly program
   // is run, but is not called outside of that
 
   $.getJSON( $SCRIPT_ROOT + '/_check_zombie',
@@ -64,13 +64,13 @@ function check_run_button() {
       console.log("clearing zombie checking")
       clearInterval(quick_check);
       // reactivate the Run your Program button
-      if ($('#run-button').length) {   
+      if ($('#run-button').length) {
         // check if the run button exists
         // this check is probably no longer needed but let's leave it here for robustness
         var width= $('#run-button').width();
         $('#run-button').css('background-color', "#9ECD5C");
         $('#run-button')[0].innerHTML="Run Your Program";
-        $('#run-button').width(width);  
+        $('#run-button').width(width);
       };
     };
   });
@@ -83,7 +83,7 @@ function check_batteries() {
   // console.log("check batteries");
   $.getJSON($SCRIPT_ROOT + '/_check_batteries',
     function( data ) {
-      // console.log(data.battery_level) 
+      // console.log(data.battery_level)
       console.log("voltage: "+data.voltage)
       // battery_level = -2 when a Blockly program is being run
       // battery_level = -1 when we've issued the warning once and now keep quiet
@@ -109,8 +109,8 @@ function check_batteries() {
       }
 
       // display the battery icon
-      // $("#battery-i").style.visibility="visible";  
-      $("#battery-i").removeClass();   
+      // $("#battery-i").style.visibility="visible";
+      $("#battery-i").removeClass();
       $("#battery-i").addClass(battery_class);
       $("#battery-i").addClass("fa");
 
@@ -131,10 +131,10 @@ function auto_save(){
   // First check if Blockly is Dirty.  If it is, do some saving.
   if(blockly_is_dirty){
     var xml = Blockly.Xml.workspaceToDom(workspace);
-    var xml_text = Blockly.Xml.domToText(xml);  
+    var xml_text = Blockly.Xml.domToText(xml);
     console.log(xml_text);
     $.getJSON(
-        $SCRIPT_ROOT+ '/save_blockly', 
+        $SCRIPT_ROOT+ '/save_blockly',
         {file_name: home_dir+"/last_save", to_save: xml_text}
     )
     blockly_is_dirty = false; // only do an autosave once until it is needed again
@@ -147,21 +147,27 @@ function auto_save(){
 
 
 // These two events listen for changes in connection
-// This first even listens for changes going offline.  
+// This first even listens for changes going offline.
 window.addEventListener("offline", function(e) {
     // alert("offline");
     load_connection_modal();
-  }, 
+  },
     false
   );
 
-// This second event listens for changes going online.  
+// This second event listens for changes going online.
 window.addEventListener("online", function(e) {
       // alert("online");
       connectionmodalclose();
-    }, 
+    },
       false
     );
+
+// Pure JS:
+// https://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("stop-i").addEventListener("click", stop_gopigo);
+});
 
 function stop_gopigo() {
   // attempting to use fast_pass_to_server first doesn't work
