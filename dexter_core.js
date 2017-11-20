@@ -121,7 +121,7 @@ function check_batteries() {
      // We check here for the power level, if it's low, we throw the warning modal up.
       if (data.battery_level == 25 && battery_alert == false) {
         battery_alert = true;
-        load_power_modal();   // Code for this is in "blockly_full.html"
+        // load_power_modal();   // Code for this is in "blockly_full.html"
       }
     }
   )
