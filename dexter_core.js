@@ -20,6 +20,8 @@ var $SCRIPT_ROOT = 'http://bloxter.com';
 
 'use strict';
 
+window.addEventListener("load", auto_detect, false);
+
 function auto_detect() {
   console.log("robot detection")
   $.getJSON($SCRIPT_ROOT + '/_auto_detect',

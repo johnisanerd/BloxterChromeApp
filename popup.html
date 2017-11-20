@@ -24,6 +24,7 @@
       }
     </style>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -53,5 +54,17 @@
         <img id="stop-i" src="stop.png" title="Press Stop sign to stop your robot." align="middle">
       </span>
     </div>
+    <div id="container">
+      <!--//////////////////////////////////////////////////////////////////////////
+      VERSION NUMBER icon
+      ////////////////////////////////////////////////////////////////////////// -->
+        <version class="version"> <!-- version number -->
+            V. <span id="versionid"></span>
+        </version>
+        <ssid class="ssid">
+            Connected to: <span id="ssid_name"></span>
+        </ssid>
+    </div>
+                  <i id="battery-i" class="fa fa-battery-full"></i>
   </body>
 </html>
