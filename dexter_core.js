@@ -195,3 +195,12 @@ function fast_pass_to_server(code) {
   // Set focus to spacebar in case user goes from mouse to keyboard
   $('#spacebarstop').focus();
 };
+
+
+$( document ).ready(function() {
+    auto_detect();
+
+    $( "#versionid" ).load( $SCRIPT_ROOT + "/version" );					// Load the version number
+    $( "#ssid_name" ).load( $SCRIPT_ROOT + "/ssid" );
+    console.log( "ready!" );
+});
