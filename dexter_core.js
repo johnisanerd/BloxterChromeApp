@@ -68,7 +68,7 @@ function auto_detect() {
 
       if (connected_robot){
         check_batteries();
-        select_support('sdcard');
+        // select_support('sdcard');
         // check battery status every 3 minutes
         // setInterval ( "check_batteries()", 3*60*1000 );
         setInterval ( "check_batteries()", 10*1000 );    // Check every 10 seconds because of averaging

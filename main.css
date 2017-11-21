@@ -47,9 +47,17 @@ h3 {
 }
 
 p {
-	font-size: 1em;
+	/*
+  font-size: 1em;
 	line-height: 1.2em;
 	text-align: left;
+  */
+  font-size: 140%;
+  font-size: 2em;
+  font-weight: 600;
+  padding: 0%;
+  text-align: center;
+  /* display: block; */
 }
 
 a {
@@ -410,12 +418,12 @@ May not be kept in the final product as lesson info will be moved
 	width: 55px;
 }
 .version {
-	float: right;
+	float: center;
 	margin: 3px;
 }
 
 .ssid {
-	float: left;
+	float: center;
 	margin: 3px;
 }
 
