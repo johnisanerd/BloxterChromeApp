@@ -18,6 +18,8 @@ Bloxter Chrome App
 
 1. [Getting Started: Building a Chrome Extension](https://developers.chrome.com/extensions/getstarted)
 2. [Extension Overview](https://developers.chrome.com/extensions/overview)
+3. [Zip up your App](https://developer.chrome.com/webstore/get_started_simple#step5)
+4. [Chrome Web Store Link](https://chrome.google.com/webstore/developer/dashboard?authuser=1)
 
 ## Developer Installation
 1. In Chrome, go to chrome://extensions/
