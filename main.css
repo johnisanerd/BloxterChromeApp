@@ -1,7 +1,7 @@
-html, body {
+/*html, body {
   height: 100%;
   /*overflow: hidden;*/
-}
+/*}*/
 button:focus {
     outline: -webkit-focus-ring-color auto 0px;
 }

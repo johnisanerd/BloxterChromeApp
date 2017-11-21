@@ -22,6 +22,33 @@ var $SCRIPT_ROOT = 'http://bloxter.com';
 
 window.addEventListener("load", auto_detect, false);
 
+function hide(){
+  console.log("Connected to robot, show all options.")
+  $("#container1").show();
+  $("#container2").show();
+  $("#container3").show();
+  $("#container4").show();
+  $("#container5").show();
+  $("#container6").show();
+
+  $("#container7").hide(); // Hides the You are Not Connected message.
+  $("#container8").hide(); // Hides the You are Not Connected message.
+
+};
+
+function show(){
+  console.log("Not connected to robot, show online options.")
+  $("#container1").hide();
+  $("#container2").hide();
+  $("#container3").hide();
+  $("#container4").hide();
+  $("#container5").hide();
+  $("#container6").hide();
+
+  $("#container7").show(); // Hides the You are Not Connected message.
+  $("#container8").show(); // Hides the You are Not Connected message.
+};
+
 function auto_detect() {
   console.log("robot detection")
   $.getJSON($SCRIPT_ROOT + '/_auto_detect',
@@ -46,8 +73,10 @@ function auto_detect() {
         // setInterval ( "check_batteries()", 3*60*1000 );
         setInterval ( "check_batteries()", 10*1000 );    // Check every 10 seconds because of averaging
         // auto_save();   // This makes sure that we always save the latest when we start
+        hide();
       } else {
         console.log("No battery checking getting done")
+        show();
       }
     });
 }
@@ -199,7 +228,6 @@ function fast_pass_to_server(code) {
 
 $( document ).ready(function() {
     auto_detect();
-
     $( "#versionid" ).load( $SCRIPT_ROOT + "/version" );					// Load the version number
     $( "#ssid_name" ).load( $SCRIPT_ROOT + "/ssid" );
     console.log( "ready!" );
