@@ -26,3 +26,7 @@ Bloxter Chrome App
 2. Click "Developer Mode"
 3. Click "Load Unpacked Extension . . ."
 4. Select the package folder, and enable.
+
+## Package up for the Chrome Store
+[From here](https://developer.chrome.com/apps/packaging#creating)
+Go to chrome://extensions  

@@ -11,10 +11,6 @@ var battery = 100;
 var detected_robot = "";
 var connected_robot = "";
 var quick_check;
-var blockly_is_dirty = false;  // This variable tells us if blockly workspace is dirty or not.  It's false if nothing has been added.
-var blockly_needs_saving = false; // This is an actual Save Program, not autosave
-var home_dir = "/home/pi/Documents/";
-var usb_dir = "/media/usb/";
 var workspace = null;
 var $SCRIPT_ROOT = 'http://bloxter.com';
 
@@ -51,8 +47,7 @@ function show(){
 
 function auto_detect() {
   console.log("robot detection")
-  $.getJSON($SCRIPT_ROOT + '/_auto_detect',
-    function( detected_robot_answer ) {
+  $.getJSON($SCRIPT_ROOT + '/_auto_detect', function( detected_robot_answer ) {
       detected_robot = detected_robot_answer.name;
       console.log("auto_detect/detected_robot: "+detected_robot_answer.name);
       connected_robot = detected_robot_answer.connected;
@@ -156,31 +151,9 @@ function check_batteries() {
   )
 };
 
-
-// Autosave Function
-function auto_save(){
-  // First check if Blockly is Dirty.  If it is, do some saving.
-  if(blockly_is_dirty){
-    var xml = Blockly.Xml.workspaceToDom(workspace);
-    var xml_text = Blockly.Xml.domToText(xml);
-    console.log(xml_text);
-    $.getJSON(
-        $SCRIPT_ROOT+ '/save_blockly',
-        {file_name: home_dir+"/last_save", to_save: xml_text}
-    )
-    blockly_is_dirty = false; // only do an autosave once until it is needed again
-    console.log("Autosave completed.");
-  }
-  else{
-    console.log("Attempted autosave.  Not dirty.");
-  }
-}
-
-
 // These two events listen for changes in connection
 // This first even listens for changes going offline.
 window.addEventListener("offline", function(e) {
-    // alert("offline");
     load_connection_modal();
   },
     false
@@ -188,8 +161,7 @@ window.addEventListener("offline", function(e) {
 
 // This second event listens for changes going online.
 window.addEventListener("online", function(e) {
-      // alert("online");
-      connectionmodalclose();
+    connectionmodalclose();
     },
       false
     );
